@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 添加新的联系人</title>
+</head>
+<body>
+<script>
+	function check()
+	{	
+		var a = document.getElementById("name").value;
+		var b = document.getElementById("phone").value;
+		var c = document.getElementById("email").value;
+		var d = document.getElementById("home").value;
+		var e = document.getElementById("qq").value;
+		var t = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+		if(!a)
+		{
+			alert("姓名错误！");
+		}
+		else if(!b)
+		{
+			alert("电话号码错误！");
+		}
+		else if(!d)
+		{
+			alert("住址错误！");
+		}
+		else if(!e)
+		{
+			alert("QQ号错误！");
+		}
+		else if(!t.test(c))
+		{
+			alert("邮箱格式错误！");
+		}
+		else
+		{
+			alert("添加成功");
+		}
+	}
+</script>
+<form name = "f">
+	<p style="text-align:center;">姓名:<input type = 'text' name = '' id = "name"><br></p>
+	<p style="text-align:center;">电话:<input type = 'text' name = '' id = "phone"><br></p>
+	<p style="text-align:center;">邮箱:<input type = 'text' name = '' id = "email"><br></p>
+	<p style="text-align:center;">住址:<input type = 'text' name = '' id = "home"><br></p>
+	<p style="text-align:center;">QQ号:<input type = 'text' name = '' id = "qq"><br></p>
+	<p style="text-align:center;"><button type="button" onclick="check()">添加</button></p>
+</form>
+
+</body>
+</html>
